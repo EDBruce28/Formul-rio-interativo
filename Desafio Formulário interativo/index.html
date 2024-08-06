@@ -4,33 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Interativo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
-    <header> 
-        <img src="logodnc.png" width="113" id="logodnc">
-        <h1>DESCUBRA O SEU CAMINHO NESTE UNIVERSO</h1>
-    </header><br>
-   <main>
-        <h2 id="titulo2"> TESTE VOCACIONAL </h2>
-     <div>   
-    <div id="FB">       
-    <label id="pergunta"><strong> Com o que acha que mais familiaridade? </strong></label><br><br> 
-    <!--frontend e backend, Desenvolvimento de APP móveis, Desenvolvimento de Games-->
-    <button id="criar" class="button" onclick="criarcoisas(), tratar(), concertar(), alinhar()"> Criar coisas?</button> </div>
+    <header>
+        <img src="dnc_dark.png" width="100">
+        <h1>Formulário Interativo</h1>
+    </header>    
+    <section>
+        <div>
+            <p id="pergunta">O que mais te interessa fazer em um computador?</p>
+            <p id="opcoes">
+                <input type="button" value="Criar sites ou aplicativos" class="botao" onclick="alternativa('criarSites')"><br><br>
+                <input type="button" value="Consertar ou montar computadores" class="botao" onclick="alternativa('consertar')"><br><br>
+                <input type="button" value="Criar designs ou arte digital" class="botao" onclick="alternativa('design')"><br><br>
+                <input type="button" value="Analisar números e dados" class="botao" onclick="alternativa('analisarDados')"><br>
+            </p>
+        </div>
+    </section>
     
-    <div id="tratar">
-    <!--Analista de Requisitos, engenharia de requisitos-->
-    <button id="dialogo" class="button"onclick="dialogo()"> Convesar e ouvir as pessoas?</button><br>
-    <div id="concertar">
-    <!--montagem e configuração (técnico de informática)-->
-    <button id="pecas" class="button" onclick="peças()">Lidar com peças?</button></div> 
-    <div id="alinhar">
-    <!--banco de dados, BI-->
-    <button id="organizar" class="button" onclick="organizar()">Organizar coisas?</button></div>
-    </div>
-</main> 
+    
 </body>
 <script src="script.js"></script>
-
 </html>
