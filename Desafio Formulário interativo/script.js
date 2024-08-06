@@ -1,68 +1,24 @@
-function inicializar(){
-document.getElementById('criar').addEventListener('click', criarcoisas);
-document.getElementById('dialogo').addEventListener('click', dialogo);
-document.getElementById('peças').addEventListener('click', peças);
+function alternativa(opcao) {
+    if (opcao === 'criarSites') {
+        document.getElementById('pergunta').innerText = 'Você prefere trabalhar com:'
+        document.getElementById('opcoes').innerHTML = `<input type="button" value="Design e aparência visual?" class="botao" onclick="exibirResultado('Design Gráfico, UX/UI')"><br><br>
+            <input type="button" value="Programação e desenvolvimento?" class="botao" onclick="exibirResultado('Desenvolvimento Web, Programação')"><br>`
+    } else if (opcao === 'consertar') {
+        document.getElementById('pergunta').innerText = 'Você prefere:'
+        document.getElementById('opcoes').innerHTML =`<input type="button" value="Entender como as redes funcionam?" class="botao" onclick="exibirResultado('Redes de Computadores')"><br><br>
+        <input type="button" value="Resolver problemas técnicos?" class="botao" onclick="exibirResultado('Suporte Técnico')"><br>`
+    } else if (opcao === 'design') {
+        document.getElementById('pergunta').innerText = 'Você prefere:'
+        document.getElementById('opcoes').innerHTML = `<input type="button" value="Criar artes visuais e gráficos?" class="botao" onclick="exibirResultado('Design Gráfico')"><br><br>
+            <input type="button" value="Desenvolver interfaces e experiências de usuário?" class="botao" onclick="exibirResultado('UX/UI')"><br>`
+    } else if (opcao === 'analisarDados') {
+        document.getElementById('pergunta').innerText = 'Você prefere:'
+        document.getElementById('opcoes').innerHTML = `<input type="button" value="Explorar dados para encontrar padrões?" class="botao" onclick="exibirResultado('Ciência de Dados')"><br><br>
+            <input type="button" value="Analisar informações para tomar decisões de negócio?" class="botao" onclick="exibirResultado('Análise de Negócios')"><br>`
+    }
 }
 
-
-
-function criarcoisas(criarMenu1){
-   function tratar(){
-      document.getElementById().style.display = 'none'
-   }
-   function concertar(){
-      document.getElementById().style.display = 'none'
-   }
-   function alinhar(){
-      document.getElementById().style.display = 'none'
-   }
-
-   var criarMenu1 = document.getElementById('FB').getElementsByTagName('button')
-   for(var i=0; i<botoes1.length;i++){
-      if (botoes1[i].id =='criar'){
-         botoes1[0].innerHTML = 'Adornar, Desenhar, Mexer com layout?'//frontend
-         botoes1[1].innerHTML = 'A primeira pergunta junto com lógica, Estruturação, Criação de mecanismos?'//backend'planejar '
-         botoes1[2].innerHTML = 'Praticidade e acessibilidade, mecanismo da física, gráfico computacional?'//app para celular e games
-         botoes1[3].innerHTML = 'Montar, concertar, ajustar?'//técnico de informática
-         
-         var pergunta = document.getElementById('pergunta')
-         pergunta.innerHTML = '<span style="font-weight: bold;">O que te chama mais atenção?</span>';
-
-      }
-     
-   }
-   
- 
+function exibirResultado(resultado) {
+    document.getElementById('pergunta').innerText = `Se essas foram as suas escolhas, o caminho indicado seria: ${resultado}.`;
+    document.getElementById('opcoes').innerHTML = `<p>Boa sorte com seus estudos!</p>`;
 }
-addEventListener('click', function(){dialogo(this)})
-function dialogo(){
-   var botoes2 = document.getElementById('botoes').getElementsByTagName('button')
-   for(var i=0; i<botoes2.length;i++){
-      if (botoes2[i].id =='dialogo'){
-         botoes2[0].innerHTML = 'Mexer com documentação'//analista de requisitos 
-         botoes2[1].innerHTML = 'Planejar, organizar e supervisionar atividades?'
-         botoes2[2].innerHTML =  'Dialogar, documentar requisições'
-         botoes2[3].innerHTML = 'teste'
-         
-         var pergunta = document.getElementById('pergunta')
-         pergunta.innerHTML = '<span style="font-weight: bold;">O que te chama mais atenção?</span>';
-      }
-   }
-   
-}
-function peças(){
-   var botoes3 = document.getElementById('botoes').getElementsByTagName('button')
-   for(var i=0; i<botoes3.length;i++){
-      if (botoes3[i].id !=='peças'){
-         botoes3[0].innerHTML = 'teste'//analista de requisitos 
-         botoes3[1].innerHTML = 'teste'
-         botoes3[2].innerHTML =  'teste'
-         botoes3[3].innerHTML = 'teste'
-         
-         var pergunta = document.getElementById('pergunta')
-         pergunta.innerHTML = '<span style="font-weight: bold;">O que te chama mais atenção?</span>';
-      }
-   }
-   
-}
-window.addEventListener('load', inicializar);
